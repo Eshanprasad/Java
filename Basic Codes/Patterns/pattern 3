@@ -1,0 +1,27 @@
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		int n = 7;                            // assume n = input from the user
+		for(int i = 1; i<=n; i++)     // i is used for rows
+		{
+			for(int j = 1; j<=i; j++)
+			{
+				System.out.print(j);
+			}
+			System.out.println();
+		}
+	}
+		
+}
+
+/*
+output:
+1
+12
+123
+1234
+12345
+123456
+*/

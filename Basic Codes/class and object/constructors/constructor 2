@@ -1,0 +1,67 @@
+// here we want to create a constructor inside the class for setting the deafult values for variables
+
+class Calc
+{
+	int num1;
+	int num2;
+	int result;
+	
+	public Calc()
+	{
+		num1 = 5;
+		num2 = 5;
+	}
+	
+	
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Calc obj = new Calc();        // here the constructor is getting called and it is assigning the value 5 to num 1 and value 5 to num 2 
+		System.out.println(obj.num1);
+}
+}
+
+
+/*
+output: 5
+*/
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+class Calc
+{
+	int num1;
+	int num2;
+	int result;
+	
+	public Calc()
+	{
+		num1 = 5;
+		num2 = 5;
+		System.out.println("In constructor");
+	}
+	
+	
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Calc obj = new Calc();        // here the constructor is getting called and it is assigning the value 5 to num 1 and value 5 to num 2 
+		System.out.println(obj.num1);
+}
+}
+
+
+
+/*
+output:
+In constructor
+5
+*/

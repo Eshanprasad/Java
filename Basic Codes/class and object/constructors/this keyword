@@ -1,0 +1,71 @@
+// when we have same names for local and instance variable names
+
+class Calc
+{
+	int num1;
+	int num2;
+	int result;
+	
+	public Calc(int num1, int num2)
+	{
+		num1 = num1;   
+		num2 = num2;
+		//num1,num2 are instance variables and number1, number2 are local variables
+	}
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Calc obj = new Calc(4,5);        // here the constructor is getting called and it is assigning the value 5 to num 1 and value 5 to num 2 
+		System.out.println(obj.num1);
+		System.out.println(obj.num2);
+	}	
+}
+
+/*
+output:
+0
+0
+*/
+
+/*
+here in line 11 and 12
+the compiler assumers that both left side num1 and right side num1 as local variables.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//to specify that left side num1 is instance variable and right side num1 is local variable, we use "this" keyword
+
+class Calc
+{
+	int num1;
+	int num2;
+	int result;
+	
+	public Calc(int num1, int num2)
+	{
+		this.num1 = num1;   // this represents current instance
+		this.num2 = num2;
+		//num1,num2 are instance variables and number1, number2 are local variables
+	}
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Calc obj = new Calc(4,5);        // here the constructor is getting called and it is assigning the value 5 to num 1 and value 5 to num 2 
+		System.out.println(obj.num1);
+		System.out.println(obj.num2);
+	}	
+}
+
+
+/*
+output:
+4
+5
+*/

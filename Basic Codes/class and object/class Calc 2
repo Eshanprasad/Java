@@ -1,0 +1,36 @@
+class Calc
+{
+	// creating variables
+	int num1;
+	int num2;
+	int result;
+	
+	// creating method
+	public void perform()     // perform is the method name, void is the return type, public is the Access modifier
+	{
+		result = num1 + num2;
+	}
+	
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Calc obj;
+		obj = new Calc();
+		obj.num1 = 5;
+		obj.num2 = 6;
+		obj.perform();
+		System.out.println(obj.result);                     // here we are printing the result without calling the method inside the class
+	
+}
+}
+
+/*
+ Output: 11
+*/
+
+
+
+

@@ -1,0 +1,52 @@
+//concept of constructor overloading is similar to method overloading.
+
+class Casio 
+{
+	int num1;
+	int num2;
+	String operation;
+	
+	public Casio()                            // constructor 1
+	{
+		num1 = 0;
+		num2 = 0;
+		operation = "Nothing";
+	}
+	
+	public Casio(int i)                         // constructor 2
+	{
+		num1 = i;
+		num2 = 0;
+		operation = "Nothing";
+	}
+	
+	public Casio(int i, int j)                  // constructor 3
+	{
+		num1 = i;
+		num2 = j;
+		operation = "Nothing";
+	}
+	
+	public Casio(int i, int j, String op)          // constructor 4
+	{
+		num1 = 0;
+		num2 = ;
+		operation = op;
+	}
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Casio obj = new Casio();
+		System.out.println(obj.num1);
+
+	}	
+}
+
+
+/*
+if we pass no parameters in constructor(line 41), constructor1 will be executed.
+if we pass one parameter in constructor(line 41), constructor2 will be executed.
+if we pass two parameters in constructor(line 41), constructor3 will be executed.
+if we pass 3 parameters (2 numbers , one string) in constructor(line 41), constructor4 will be executed.

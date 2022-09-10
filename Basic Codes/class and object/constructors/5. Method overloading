@@ -1,0 +1,35 @@
+class Casio 
+{
+	public void add(int i, int j)
+	{
+		System.out.println(i + j);
+	}
+}
+public class FirstCode
+{
+	
+	public static void main(String[] args)
+	{
+		Casio obj = new Casio();
+		obj.add(5, 6);
+	}	
+}
+
+/*
+output: 11
+*/
+
+
+
+/*
+but in the above code in line 14, we can only pass two parameters and that too of int type. We get error if we try to assign more parameters.
+This happens because, we created a method inside the class which takes exactly 2 parameters and that too of int type.
+Thus, if we assign more parameters or if we assign data of different types as we dont have any method inside the class which accepts such data,
+it gets error'
+
+If we want to pass 3 parameters or if we want to pass any number of parameters or if we want to pass other data type parameters, we must have to create a 
+method inside the class to accept such kind of data.
+
+This is called as METHOD OVERLOADING
+
+*/

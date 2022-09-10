@@ -1,0 +1,239 @@
+class Employee
+{
+	int id;
+	int salary;
+	String ceo;
+	
+	public void show()
+	{
+		System.out.println(id + ":" + salary + ":" + ceo);
+	}
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Employee eshan = new Employee();        // creating object one
+		eshan.id = 205;
+		eshan.salary = 10000;
+		eshan.ceo = "Jeff";	
+		
+		
+		Employee kushal = new Employee();
+		kushal.id = 208;
+		kushal.salary = 15000;
+		kushal.ceo = "Bezos";
+	
+		eshan.show();
+		kushal.show();
+	}
+}
+
+/*
+output:
+205:10000:Jeff
+208:15000:Bezos
+*/
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+we actually have a single CEO for all the employees.
+thus, in the above code, the variable ceo should be same for all the objects.
+so when we want a variable that should not be object specific and it should be same for all the objects we use static keyword
+*/
+
+class Employee
+{
+	int id;
+	int salary;
+	static String ceo;
+	
+	public void show()
+	{
+		System.out.println(id + ":" + salary + ":" + ceo);
+	}
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Employee eshan = new Employee();        // creating object one
+		eshan.id = 205;
+		eshan.salary = 10000;
+		eshan.ceo = "Jeff";	                    // as we assigned ceo as Jeff for the object, the ceo for all the other objects will be changed to Jeff
+		
+		
+		Employee kushal = new Employee();
+		kushal.id = 208;
+		kushal.salary = 15000;
+		kushal.ceo = "Bezos";                   // as we assigned ceo as Bezos for the object, the ceo for all the other objects will be changed to Bezos
+	
+		eshan.show();
+		kushal.show();
+	}
+}
+
+/*
+output:
+205:10000:Bezos
+208:15000:Bezos
+*/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*As the ceo is same for all the objects, these is no need to use object name to specify CEO (example: kushal.ceo = "Bezos";).
+instead of this we can use class name (example: Employee.ceo = "Bezos";)
+*/
+
+class Employee
+{
+	int id;
+	int salary;
+	static String ceo;
+	
+	public void show()
+	{
+		System.out.println(id + ":" + salary + ":" + ceo);
+	}
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Employee eshan = new Employee();        // creating object one
+		eshan.id = 205;
+		eshan.salary = 10000;
+		Employee.ceo = "Jeff";	
+		
+		
+		Employee kushal = new Employee();
+		kushal.id = 208;
+		kushal.salary = 15000;
+		Employee.ceo = "Bezos";
+	
+		eshan.show();
+		kushal.show();
+	}
+}
+
+
+/*
+output:
+205:10000:Bezos
+208:15000:Bezos
+*/
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*
+to initialize static variables, we use static block.
+static blocks execute only execute once, irrespective of the number of objects.
+*/
+
+class Employee
+{
+	int id;
+	int salary;
+	static String ceo;
+	
+	static
+	{                                                               // STATIC BLOCK
+		ceo = "prasad";
+	}
+	
+	public void show()
+	{
+		System.out.println(id + ":" + salary + ":" + ceo);
+	}
+	
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Employee eshan = new Employee();        // creating object one
+		eshan.id = 205;
+		eshan.salary = 10000;
+		
+		
+		Employee kushal = new Employee();
+		kushal.id = 208;
+		kushal.salary = 15000;
+	
+		eshan.show();
+		kushal.show();
+	}
+}
+
+/*
+OUTPUT:
+205:10000:prasad
+208:15000:prasad
+*/
+
+=======================================================================================================================================================================
+
+
+/*
+static blocks execute only once
+constructor blocks execute every time a new object is created
+
+to prove that, check the below code
+*/
+
+
+class Employee
+{
+	int id;
+	int salary;
+	static String ceo;
+	
+	static
+	{
+		ceo = "prasad";
+		System.out.println("in class");
+	}
+	
+	public Employee()
+	{
+		System.out.println("in constructor");
+	}
+	
+	public void show()
+	{
+		System.out.println(id + ":" + salary + ":" + ceo);
+	}
+	
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Employee eshan = new Employee();        // creating object one
+		eshan.id = 205;
+		eshan.salary = 10000;
+		
+		
+		Employee kushal = new Employee();
+		kushal.id = 208;
+		kushal.salary = 15000;
+	
+		eshan.show();
+		kushal.show();
+	}
+}
+
+
+/*
+output:
+in class
+in constructor
+in constructor
+205:10000:prasad
+208:15000:prasad
+*/

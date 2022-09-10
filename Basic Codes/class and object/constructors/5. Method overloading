@@ -22,14 +22,79 @@ output: 11
 
 
 /*
-but in the above code in line 14, we can only pass two parameters and that too of int type. We get error if we try to assign more parameters.
+but in the above code in line 14, we can only pass two parameters and that too of int type. We get error if we try to assign more parameters or if we assign different data type other than int
 This happens because, we created a method inside the class which takes exactly 2 parameters and that too of int type.
-Thus, if we assign more parameters or if we assign data of different types as we dont have any method inside the class which accepts such data,
+Thus, if we assign more parameters or if we assign data of different types as we dont have any method inside the class which accepts such kind of data,
 it gets error'
 
 If we want to pass 3 parameters or if we want to pass any number of parameters or if we want to pass other data type parameters, we must have to create a 
-method inside the class to accept such kind of data.
+separate method inside the class to accept such kind of data.
 
 This is called as METHOD OVERLOADING
 
 */
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*
+If we want to pass any number of parameters or if we want to pass other data type parameters, we must have to create a 
+separate method inside the class to accept such kind of data.
+This is called method overloading
+
+=> In a class we can have same method. But each method should take different parameters.(code is mentioned below)
+*/
+
+
+class Casio 
+{
+	public void add(int i, int j)       //method 1
+	{
+		System.out.println(i + j);
+	}
+	
+	public void add(int i, int j, int k)      //method 2
+	{
+		System.out.println(i + j + k);
+	}
+	
+	public void add(double i, double j)     //method 3
+	{
+		System.out.println(i + j);
+	}
+}
+public class FirstCode
+{
+	public static void main(String[] args)
+	{
+		Casio obj = new Casio();
+		obj.add(5,6);                             //method 1 gets called
+		
+		obj.add(5, 6, 7);                        // method 2 gets called
+		
+		obj.add(3.4, 1.6);                     // method 3 gets called
+	}	
+}
+
+
+/*
+ output:
+ 11
+ 18
+ 5.0
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter the fahrenheit value");
+		int n = s.nextInt();
+		double val = (5.0 * (n-32))/9;
+		System.out.println("Fahrenheit value: " + n + "    celsius value is " + val);
+	}
+}

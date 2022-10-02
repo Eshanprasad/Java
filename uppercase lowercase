@@ -1,0 +1,21 @@
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		char st = s.next().charAt(0);
+		if('A' <= st && st<='Z')
+		{
+			System.out.println( st + " is uppercase Alphabet");
+		}
+		else if('a'<=st && st<='z')
+		{
+			System.out.println(st + " is lowercase Alphabet");
+		}
+		else
+		{
+			System.out.println(st + " is not an alphabet");
+		}
+	}
+}

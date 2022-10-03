@@ -1,0 +1,24 @@
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter any number");
+		int i = s.nextInt();
+		boolean f = false;
+		for(int j = 2; j<i ; j++)
+		{
+			if(i%j==0)
+			{
+				f = true;
+				break;
+			}
+		}
+		if(f ==true)
+			System.out.println("Not prime");
+		else
+			System.out.println("prime");
+		
+	}
+}

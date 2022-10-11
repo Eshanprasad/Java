@@ -19,3 +19,33 @@ public class EshanClass {
 		even(start, end);
 	}
 }
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//code - 2
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void even(int start, int end)
+	{
+		if(start%2!=0)
+		{
+			start++;
+		}
+		for(int i = start; i<=end; i+=2)
+			{
+				System.out.println(i);
+			}
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter starting value");
+		int start = s.nextInt();
+		int end = s.nextInt();
+		even(start, end);
+	}
+}

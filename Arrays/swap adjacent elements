@@ -1,0 +1,64 @@
+// using temporary variable
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void printArray(int[] arr) {
+		for(int i = 0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	public static int[] swapAdjacentElements(int[] arr) 
+	{
+		int L = arr.length;
+		for(int i = 0; i<L; i+=2) {
+			if(i== L -1)
+				continue;
+			int temp = arr[i];
+			arr[i] = arr[i+1];
+			arr[i+1] = temp;
+		}
+		return arr;
+	}
+	public static void main(String[] args){
+		int[] arr= {1,2,3,4,5,6};
+		arr =  swapAdjacentElements(arr);
+		printArray(arr);
+	}
+}
+// output: 2 1 4 3 6 5 
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// code without using temporary variable
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void printArray(int[] arr) {
+		for(int i = 0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	public static int[] swapAdjacentElements(int[] arr) 
+	{
+		int L = arr.length;
+		for(int i = 0; i<L; i+=2) {
+			if(i== L -1)
+				continue;
+			arr[i] = arr[i] + arr[i+1];
+			arr[i+1] = arr[i] - arr[i+1];
+			arr[i] = arr[i] - arr[i+1];
+		}
+		return arr;
+	}
+	public static void main(String[] args){
+		int[] arr= {1,2,3,4,5, 6};
+		arr =  swapAdjacentElements(arr);
+		printArray(arr);
+	}
+}
+
+
+// output: 2 1 4 3 6 5 

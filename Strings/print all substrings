@@ -12,3 +12,24 @@ public class EshanClass {
 		}
 	}
 }
+
+
+/*
+input: eshan
+output:
+eshan
+esha
+esh
+es
+e
+shan
+sha
+sh
+s
+han
+ha
+h
+an
+a
+n
+*/

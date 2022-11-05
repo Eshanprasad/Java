@@ -1,0 +1,29 @@
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void print2DArray(int[][] arr, int rows, int columns) {
+		for(int i = 0; i<rows; i++) {
+			for(int j = 0; j <columns; j++) {
+				System.out.println(i + "row " + j + "column = " + arr[i][j] );
+			}
+		}
+	}
+	public static void main(String[] args){
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter the number of rows");
+		int rows = s.nextInt();
+		System.out.println("enter the number of columns");
+		int columns = s.nextInt();
+		int[][] arr = new int[rows][columns];
+		for(int i = 0; i<rows; i++) {
+			System.out.println("ENTER THE  " + i + " ROW ELEMENTS");
+			for(int j = 0; j<columns; j++) {
+				System.out.println("enter the (" + i + ", "+ j + ") element");
+				arr[i][j] = s.nextInt();
+			}
+		}
+		print2DArray(arr, rows, columns);
+		
+	}
+	
+}

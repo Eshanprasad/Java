@@ -1,0 +1,32 @@
+package practice;
+import java.util.Scanner;
+public class EshanClass {
+	public static void main(String[] args){
+		Scanner s = new Scanner(System.in);
+		System.out.println("enter number of rows");
+		int rows = s.nextInt();
+		System.out.println("enter the number of columns");
+		int columns = s.nextInt();
+		int[][] arr = new int[rows][columns];
+		//taking array input
+		for(int r = 0; r<rows; r++) {
+			for(int c = 0; c<columns; c++) {
+				System.out.println("enter the " + r+ " row "+ c+ " column element");
+				arr[r][c] = s.nextInt();
+			}
+		}
+		//calculating max column sum
+		int sum = 0;
+		int max = 0;
+		for(int c = 0; c<columns; c++) {
+			sum = 0;
+			for(int r = 0; r<rows; r++) {
+				sum += arr[r][c];
+			}
+			if(sum>max) {
+				max=sum;
+			}
+		}
+		System.out.println("maximum column sum is " + max);
+	}
+}

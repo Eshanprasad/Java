@@ -65,6 +65,11 @@ public class EshanClass {
 			int rows = s.nextInt();
 			System.out.println("enter the number of columns");
 			int columns = s.nextInt();
+			if(rows == 0 || columns == 0) {                              // array formation is not possible here, so sum is not possible
+				String val = "rows " + 0 + " " + Integer.MIN_VALUE;
+				str_array[test] = val;
+				continue;
+			}
 			int[][] arr = new int[rows][columns];
 			//taking array input
 			for(int r = 0; r<rows; r++) {

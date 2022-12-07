@@ -1,0 +1,38 @@
+/*
+input : 10, 10, 20 , 30, 40, 40, 40, 50, 50, 60, 10, 70, 70, 20
+output: 10, 20, 30, 50, 60, 10, 70, 20
+
+*/
+
+
+
+
+package ClassesandObjects;
+import java.util.ArrayList;
+class StudentUse{
+	public static ArrayList<Integer> removeConsecutiveDuplicates(int[] arr) {
+		ArrayList<Integer>  arraylist = new ArrayList<Integer>();
+		for(int i = 0; i<arr.length; i++) {
+			if(i == arr.length-1) {
+				arraylist.add(arr[i]);
+			}
+			else {
+				if(arr[i] == arr[i+1]) {
+					continue;
+				}
+				else {
+					arraylist.add(arr[i]);
+				}
+			}
+		}
+		return arraylist;
+	}
+	public static void main(String[] args) {
+		ArrayList<Integer> arr = new ArrayList<>();
+		int[] arrayy = {10,10, 20, 30, 40, 40, 40, 50, 50, 10, 20, 20, 10};
+		ArrayList<Integer> dummy = removeConsecutiveDuplicates(arrayy);
+		for(int i = 0; i<dummy.size(); i++) {
+			System.out.println(dummy.get(i));
+		}
+	}
+}

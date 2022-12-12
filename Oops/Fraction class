@@ -1,0 +1,61 @@
+package ClassesandObjects;
+import java.util.Scanner;
+
+public class Fraction {
+	 int numerator;
+	 int denominator = 1;
+	 public Fraction(int num, int den){
+		 numerator = num;
+		 if(den == 0) {
+			 System.out.println("Cannot initiate denominator with ZERO");
+			 int creating_an_error = 1/0;
+		 }
+		 denominator = den;
+		 simplify();
+	 }
+	public void simplify() {
+		int gcd = 1;
+		int smaller = Math.min(numerator, denominator);
+		for(int i = smaller; i>0; i--) {
+			if(numerator%i== 0 && denominator%i==0) {
+				gcd = i;
+				break;
+			}
+		}
+		numerator = numerator/gcd;
+		denominator = denominator/gcd;
+	}
+	public void print() {
+		System.out.println(numerator + "/" + denominator);
+	}
+	public void increment() {
+		numerator = numerator + denominator;
+		simplify();
+	}
+	public static int LCM(int num1, int num2) {
+		int lcm = num1*num2;
+		int larger = Math.max(num1, num2);
+		for(int i = 1; i>0; i++) {
+			int val = larger*i;
+			if(val%num1 == 0 && val%num2 == 0) {
+				lcm = val;
+				break;
+			}
+		}
+		return lcm;
+	}
+	public void add(Fraction f2) {
+		int lcm = LCM(this.denominator, f2.denominator);
+		this.numerator = (this.numerator * (lcm / this.denominator)) + (f2.numerator * (lcm/f2.denominator));
+		this.denominator = lcm;
+		simplify();
+	}
+	
+	public static Fraction add(Fraction f1, Fraction f2) {
+		int lcm = LCM(f1.denominator, f2.denominator);
+		int num= (f1.numerator * (lcm / f1.denominator)) + (f2.numerator * (lcm/f2.denominator));
+		int den = lcm;
+		Fraction f = new Fraction(num, den);
+		return f;
+	}
+}

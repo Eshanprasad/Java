@@ -85,3 +85,19 @@ public class Use {
 		ref.findArea();
 	}
 }
+
+
+
+
+
+
+
+/*
+Output:
+It's a square
+the area of square is 100
+It's a rectangle
+the area of rectangle is 50
+It's a circle
+the area of circle is 314
+*/

@@ -1,0 +1,100 @@
+//parent class
+package ClassesandObjects;
+
+public class Shape {
+	public void findArea() {
+		System.out.println("printing the area");
+	}
+	public void display() {
+		System.out.println("print the shape");
+	}
+}
+
+
+
+//child class 1
+package ClassesandObjects;
+
+public class Square extends Shape {
+	public void findArea() {
+		int side = 10;
+		int area = side*side;
+		System.out.println("the area of square is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a square");
+	}
+}
+
+
+
+//child class 2
+package ClassesandObjects;
+
+public class Rectangle extends Shape{
+	public void findArea() {
+		int l, b;
+		l = 10;
+		b = 5;
+		int area = l*b;
+		System.out.println("the area of rectangle is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a rectangle");
+	}
+}
+
+
+
+//child class 3
+package ClassesandObjects;
+
+public class Circle extends Shape{
+	public void findArea() {
+		int radi =10;
+		int area = (int)(3.14*radi*radi);
+		System.out.println("the area of circle is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a circle");
+	}
+}
+
+
+
+//Main class
+
+
+package ClassesandObjects;
+import java.util.Scanner;
+public class Use {
+	public static void fun(Shape s) {
+		s.findArea();
+		s.display();
+	}
+	public static void main(String[] args) {
+		Shape ref;
+		Square sq = new Square();
+		Rectangle re = new Rectangle();
+		Circle c = new Circle();
+		
+		fun(sq);
+		fun(re);
+		fun(c);
+	}
+}
+
+
+
+
+
+
+/*
+Output:
+It's a square
+the area of square is 100
+It's a rectangle
+the area of rectangle is 50
+It's a circle
+the area of circle is 314
+*/

@@ -1,0 +1,93 @@
+/*
+For achieving Abstraction in java we can use Abstract class as well as Interfaces. Both are going to promote Polymorphism.
+
+By default, all the methods in interface are "public abstract" weather we mention it or not.
+
+In All the classes which implements interface should have Overridden methods as "public".
+
+*/
+
+//Interface
+package ClassesandObjects;
+
+public interface Shape {
+	void findArea();
+	void display();
+}
+
+
+//child class1
+package ClassesandObjects;
+public class Square implements Shape {
+	public void findArea() {
+		int side = 10;
+		int area = side*side;
+		System.out.println("the area of square is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a square");
+	}
+}
+
+
+//child class2
+package ClassesandObjects;
+public class Circle implements Shape{
+	public void findArea() {
+		int radi =10;
+		int area = (int)(3.14*radi*radi);
+		System.out.println("the area of circle is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a circle");
+	}
+	void eshan() {
+		System.out.println("eshan prasad");
+	}
+}
+
+
+//child class3
+package ClassesandObjects;
+public class Rectangle implements Shape{
+	public void findArea() {
+		int l, b;
+		l = 10;
+		b = 5;
+		int area = l*b;
+		System.out.println("the area of rectangle is "+ area);
+	}
+	public void display() {
+		System.out.println("It's a rectangle");
+	}
+}
+
+
+//Main Class
+package ClassesandObjects;
+public class Use {
+	public static void fun(Shape s) {
+		s.findArea();
+		s.display();
+	}
+	public static void main(String[] args) {
+		Shape ref;
+		Square sq = new Square();
+		Rectangle re = new Rectangle();
+		Circle c = new Circle();
+		fun(sq);
+		fun(re);
+		fun(c);
+	}
+}
+
+
+/*
+Output:
+the area of square is 100
+It's a square
+the area of rectangle is 50
+It's a rectangle
+the area of circle is 314
+It's a circle
+*/

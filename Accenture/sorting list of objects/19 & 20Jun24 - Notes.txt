@@ -1,0 +1,97 @@
+Array
+-----
+	Collection of similar data items
+	
+	Array declaration
+	------------------
+	int[] a = new int[100];
+	(or)
+	Integer[] a = new Integer[100];
+	
+	Array Initialization
+	--------------------
+	int[] numbers = {10,20,30,40}; // size is 4
+	
+	Iterate an Array
+	----------------
+		for loop
+		enhanced for loop
+	
+Disadvantages in Array
+-----------------------
+	1. Fixed Size
+	2. supports primitive types
+	3. fewer API's
+
+Collection Framework
+--------------------
+	Collection of similar data items - Generic collection
+		jdk 1.5+
+	It takes only objects , no primitives
+	It can grow the size dynamically at runtime
+	Huge set of API's 
+		Example : add(), remove(), size(), etc....
+	Different structure to save the items. 
+	package : java.util.*
+	
+	Collection Interface
+			|
+		List - accepts duplicate values
+			ArrayList 
+			LinkedList -> Doubly linked list
+			Vector - Thread Safe
+			Stack
+		
+		Collections.sort()		
+		
+		Set  - not accepts duplicate values 
+			HashSet -> no order
+			LinkedHashSet -> insertion order 
+			(I)SortedSet -> TreeSet -> sorted order 
+	
+	
+	Collection Interface methods
+	----------------------------
+		int size()
+		add()
+		addAll()
+		remove()
+		removeAll()
+		set()
+		iterator()
+		stream() -> Java 8
+		contains()
+		clear()
+		equals()
+		Boolean isEmpty() 
+		toArray()
+
+
+	java.lang -> Object class -> toString()
+	
+	Sorting the collection of user defined objects 
+	-----------------------------------------------
+		Collections.sort(list);
+		
+		1. java.lang.Comparable Interface 
+				int compareTo(Object o) 
+				
+		2. java.util.Comparator Interface 
+				int compare(Object obj1,Object obj2)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	

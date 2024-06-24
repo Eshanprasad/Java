@@ -9,9 +9,10 @@ package javaeightfeatures;
 public class TestVehicle {
 
 	public static void main(String[] args) {
-		Vehicle veh = (message) -> System.out.println("welcome "+ message);
+		Vehicle veh = (message) -> System.out.println("Welcome "+ message);  //Vehicle veh = (message) -> {System.out.println("Welcome "+message);};
+
 		veh.greet("eshan");
 	}
 }
 
-//output: welcome eshan
+//output: Welcome eshan

@@ -13,3 +13,5 @@ public class TestVehicle {
 		veh.greet("eshan");
 	}
 }
+
+//output: welcome eshan

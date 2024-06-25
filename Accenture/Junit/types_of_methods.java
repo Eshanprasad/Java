@@ -45,3 +45,16 @@ public class JunitDemo1 {
 		System.out.println("Test 2 executed successfully");
 	}
 }
+
+
+/*
+Output:
+This is executed before all
+This is before each
+Test 1 executed successfully
+This is after each
+This is before each
+Test 2 executed successfully
+This is after each
+This is after all
+*/

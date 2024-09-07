@@ -1,0 +1,43 @@
+package practice;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String s1 = "NeSo AcaDEMy";
+		System.out.println(s1.toUpperCase());  //NESO ACADEMY
+		System.out.println(s1.toLowerCase());  //neso academy
+		System.out.println(s1.length());       //returns length
+		
+		s1 = "";
+		System.out.println(s1.isEmpty());   //true
+		System.out.println(s1.isBlank());   //true
+		
+		s1 = "  ";
+		System.out.println(s1.isEmpty());   //false
+		System.out.println(s1.isBlank());   //true   :it's similar to isEmpty() method, but if we have only spaces in our string, it returns true.
+		
+		s1 = "esh";
+		System.out.println(s1.isEmpty());   //false
+		System.out.println(s1.isBlank());   //false
+		
+		s1 = "abcd";
+		System.out.println(s1.charAt(0));     //a
+		System.out.println(s1.indexOf('d'));  //3
+		System.out.println(s1.indexOf('z'));  //-1 : it returns -1 if character doesn't exist
+		
+		
+		s1 = "abca";
+		System.out.println(s1.indexOf('a'));    //0
+		System.out.println(s1.lastIndexOf('a'));  //3
+		
+		s1 = "eshan";
+		String s2 = s1.concat(" prasad");
+		System.out.println(s2);                //eshan prasad
+		
+		
+	}
+}
